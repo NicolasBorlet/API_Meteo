@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 html{
     background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
 }
@@ -9,4 +11,15 @@ header{
 
 .navbar_header #search_nav_header{
     float: right;
+}
+
+.wrap{
+    padding-left: 200px;
+}
+
+.wrap h1{
+    font-family: roboto, sans-serif;
+    font-size: 40px;
+    color: white;
+    align-items: center;
 }
