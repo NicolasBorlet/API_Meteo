@@ -56,4 +56,13 @@ html {
   background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
 }
 
+header {
+  padding-top: 32px;
+  padding-right: 32px;
+}
+
+.navbar_header #search_nav_header {
+  float: right;
+}
+
 /*# sourceMappingURL=style.css.map */
