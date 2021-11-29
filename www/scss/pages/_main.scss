@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-html{
+body{
     background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
 }
 
 header{
     padding-top: 32px;
     padding-right: 32px;
+    display: flex;
+    justify-content: end;
 }
 
 .navbar_header #search_nav_header{
@@ -14,6 +16,7 @@ header{
 }
 
 .wrap{
+    padding-top: 106px;
     padding-left: 200px;
 }
 
@@ -22,4 +25,15 @@ header{
     font-size: 40px;
     color: white;
     align-items: center;
+}
+
+section .list{
+    border-bottom: solid 1px #fff;
+    font-family: roboto, sans-serif;
+    color: white;
+    font-size: 16px;
+}
+
+section#first_list{
+    padding-top:50px
 }
