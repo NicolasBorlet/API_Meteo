@@ -27,11 +27,17 @@ header{
     align-items: center;
 }
 
-section .list{
+section#first_list .list{
     border-bottom: solid 1px #fff;
     font-family: roboto, sans-serif;
     color: white;
     font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+section#first_list .list section.information_list{
+    display: flex;
 }
 
 section#first_list{
