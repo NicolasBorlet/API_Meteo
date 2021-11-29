@@ -40,6 +40,18 @@ section#first_list .list section.information_list{
     display: flex;
 }
 
+#main{
+    display: flex;
+}
+
 section#first_list{
     padding-top:50px
 }
+
+div#main  section#main_right{
+    float: right;
+}
+
+div#main  section#main_right div#icone img#ellipse{
+    position: absolute;
+} 
