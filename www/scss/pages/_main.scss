@@ -28,6 +28,8 @@ header{
 }
 
 section#first_list .list{
+    padding-bottom: 16px;
+    padding-top: 16px;
     border-bottom: solid 1px #fff;
     font-family: roboto, sans-serif;
     color: white;
@@ -45,13 +47,34 @@ section#first_list .list section.information_list{
 }
 
 section#first_list{
-    padding-top:50px
+    margin-top:32px;
+    width:400px;
+}
+
+div#main section#first_list div.list section.information_list p{
+    padding-right: 8px;
 }
 
 div#main  section#main_right{
     float: right;
+    display: flex;
+    margin-left: 27px;
 }
 
-div#main  section#main_right div#icone img#ellipse{
+div#main  section#main_right p{
+    color:#fff;
     position: absolute;
-} 
+    font-size:340px;
+    opacity: 20%;
+    font-family: Roboto, sans-serif;
+}
+
+div#main  section#main_right div#icone img#conditions{
+    position: relative;
+    margin: auto;
+}
+
+div#main  section#main_right div#icone{
+    padding-left: 250px;
+    display: flex;
+}
