@@ -20,55 +20,82 @@
             <br>
             Today 15 September
         </h1>
-    <div id="main">
-        <section id="first_list">
-            <div class="list">
-                <section class="title_list">
-                    <p>Wind(gust)</p>
-                </section>
-                <section class="information_list">
-                    <p>17 km/h</p>
-                    <img src="images/Wind.svg"/>
-                </section>
-            </div>
-            <div class="list">
-                <section class="title_list">
-                    <p>Sunrise</p>
-                </section>
-                <section class="information_list">
-                    <p>6:45</p>
-                    <img src="images/Sunrise.svg"/>
-                </section>
-            </div>
-            <div class="list">
-                <section class="title_list">
-                    <p>Sunset</p>
-                </section>
-                <section class="information_list">
-                    <p>19h37</p>
-                    <img src="images/Sunset.svg"/>
-                </section>
-            </div>
-            <div class="list">
-                <section class="title_list">
-                    <p>Precipitation</p>
-                </section>
-                <section class="information_list">
-                    <p>2.5 mm</p>
-                    <img src="images/Precipitation.svg"/>
-                </section>
-            </div>
-        </section>
-        <section id="main_right">
-            <p>
-                28°
-            </p>
-            <div id="icone">
-                <img id="conditions" src="images/partly_cloudy.svg"/>
-                <!--<img id="ellipse" src="images/ellipse.svg"/>-->
-            </div>
+        <div id="main">
+            <section id="first_list">
+                <div class="list">
+                    <section class="title_list">
+                        <p>Wind(gust)</p>
+                    </section>
+                    <section class="information_list">
+                        <p>17 km/h</p>
+                        <img src="images/Wind.svg"/>
+                    </section>
+                </div>
+                <div class="list">
+                    <section class="title_list">
+                        <p>Sunrise</p>
+                    </section>
+                    <section class="information_list">
+                        <p>6:45</p>
+                        <img src="images/Sunrise.svg"/>
+                    </section>
+                </div>
+                <div class="list">
+                    <section class="title_list">
+                        <p>Sunset</p>
+                    </section>
+                    <section class="information_list">
+                        <p>19h37</p>
+                        <img src="images/Sunset.svg"/>
+                    </section>
+                </div>
+                <div class="list">
+                    <section class="title_list">
+                        <p>Precipitation</p>
+                    </section>
+                    <section class="information_list">
+                        <p>2.5 mm</p>
+                        <img src="images/Precipitation.svg"/>
+                    </section>
+                </div>
+            </section>
+            <section id="main_right">
+                <p>
+                    28°
+                </p>
+                <div id="icone">
+                    <img id="conditions" src="images/partly_cloudy.svg"/>
+                    <!--<img id="ellipse" src="images/ellipse.svg"/>-->
+                </div>
         </section>
     </div>
+    <div id="days">
+        <ul id="timeline">
+            <li class="day">
+                <button>Today</button>
+            </li>
+            <li class="day">
+                <button>Thursday</button>
+            </li>
+            <li class="day">
+                <button>Friday</button>
+            </li>
+            <li class="day">
+                <button>Saturday</button>
+            </li>
+            <li class="day">
+                <button>Sunday</button>
+            </li>
+            <li class="day">
+                <button>Monday</button>
+            </li>
+            <li class="day">
+                <button>Tuesday</button>
+            </li>
+        </ul>
+    </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="/js/map.js"></script>
 </body>
 </html>
