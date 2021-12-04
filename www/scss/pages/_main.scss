@@ -2,6 +2,7 @@
 
 body{
     background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
+    font-family: roboto, sans-serif;
 }
 
 header{
@@ -18,10 +19,10 @@ header{
 .wrap{
     padding-top: 106px;
     padding-left: 200px;
+    padding-right: 200px;
 }
 
 .wrap h1{
-    font-family: roboto, sans-serif;
     font-size: 40px;
     color: white;
     align-items: center;
@@ -53,6 +54,15 @@ section#first_list{
 
 div#main section#first_list div.list section.information_list p{
     padding-right: 8px;
+    margin: auto;
+}
+
+div#main section#first_list div.list section.title_list{
+    display: flex;
+}
+
+div#main section#first_list div.list section.title_list p{
+    margin: auto;
 }
 
 div#main  section#main_right{
@@ -77,4 +87,35 @@ div#main  section#main_right div#icone img#conditions{
 div#main  section#main_right div#icone{
     padding-left: 250px;
     display: flex;
+}
+
+li.day{
+    display: inline;
+    padding: 0px,16px;
+}
+
+li.day button{
+    background-color: none;
+    color: black;
+}
+
+div#days{
+    padding-top: 130px;
+    display: flex;
+}
+
+div#days ul#timeline{
+    margin:auto;
+}
+
+div#days ul#timeline li{
+    padding-right: 16px;
+}
+
+div#days ul#timeline li.day button{
+    background-color: none;
+    color: black;
+    width:122px;
+    height: 56px;
+    font-size:14px;
 }
