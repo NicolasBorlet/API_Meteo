@@ -8,4 +8,9 @@ $(document).ready(function() {
           $(this).removeClass("is-active");
         }
       );
+
+      $( "button" ).click(
+        function () {
+            $(this).addClass("is-select");
+        });
 });
