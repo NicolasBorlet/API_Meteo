@@ -171,13 +171,21 @@ div#days ul#timeline li {
 }
 
 div#days ul#timeline li.day button {
-  background-color: red;
-  stroke: 4px navy;
+  background-color: none;
   border-radius: 100px;
   color: #fff;
   width: 122px;
   height: 56px;
   font-size: 14px;
+}
+
+div#days ul#timeline li.day.is-active button {
+  border: 1px solid white;
+}
+
+div#days ul#timeline li.day button.is-select {
+  background-color: #fff;
+  color: black;
 }
 
 body {
