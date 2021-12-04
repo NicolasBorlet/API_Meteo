@@ -110,8 +110,7 @@ div#days ul#timeline li{
 
 //Style button neutre
 div#days ul#timeline li.day button{
-    background-color: red;
-    stroke: 4px navy;
+    background-color: none;
     border-radius: 100px;
     color: #fff;
     width:122px;
@@ -120,8 +119,12 @@ div#days ul#timeline li.day button{
 }
 
 //Style button hovered
-div#days ul#timeline li.day .is-active button{
-
+div#days ul#timeline li.day.is-active button{
+    border: 1px solid white;
 }
 
 //Style button select
+div#days ul#timeline li.day button.is-select{
+    background-color: #fff;
+    color: black;
+}
