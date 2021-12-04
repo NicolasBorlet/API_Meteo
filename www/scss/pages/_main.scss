@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body{
-    background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
-    font-family: roboto, sans-serif;
-}
-
 header{
     padding-top: 32px;
     padding-right: 32px;
@@ -112,10 +107,21 @@ div#days ul#timeline li{
     padding-right: 16px;
 }
 
+
+//Style button neutre
 div#days ul#timeline li.day button{
-    background-color: none;
-    color: black;
+    background-color: red;
+    stroke: 4px navy;
+    border-radius: 100px;
+    color: #fff;
     width:122px;
     height: 56px;
     font-size:14px;
 }
+
+//Style button hovered
+div#days ul#timeline li.day .is-active button{
+
+}
+
+//Style button select
