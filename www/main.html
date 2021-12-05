@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="scss/base/_reset.scss">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>API_Météo</title>
 </head>
 <body>
@@ -16,9 +17,8 @@
     </header>
     <div class="wrap">
         <h1>
-            Oslo
-            <br>
-            Today 15 September
+            <p id="city"></p>
+            <p id="date">Today 15 September</p>
         </h1>
         <div id="main">
             <section id="first_list">
@@ -27,7 +27,7 @@
                         <p>Wind(gust)</p>
                     </section>
                     <section class="information_list">
-                        <p>17 km/h</p>
+                        <p id="wind_speed"></p>
                         <img src="images/Wind.svg"/>
                     </section>
                 </div>
@@ -36,7 +36,7 @@
                         <p>Sunrise</p>
                     </section>
                     <section class="information_list">
-                        <p>6:45</p>
+                        <p id="sunrise">6:45</p>
                         <img src="images/Sunrise.svg"/>
                     </section>
                 </div>
@@ -45,7 +45,7 @@
                         <p>Sunset</p>
                     </section>
                     <section class="information_list">
-                        <p>19h37</p>
+                        <p id="sunset">19h37</p>
                         <img src="images/Sunset.svg"/>
                     </section>
                 </div>
@@ -54,15 +54,13 @@
                         <p>Precipitation</p>
                     </section>
                     <section class="information_list">
-                        <p>2.5 mm</p>
+                        <p id="precipitation">2.5 mm</p>
                         <img src="images/Precipitation.svg"/>
                     </section>
                 </div>
             </section>
             <section id="main_right">
-                <p>
-                    28°
-                </p>
+                <p id="temp"></p>
                 <div id="icone">
                     <img id="conditions" src="images/partly_cloudy.svg"/>
                     <!--<img id="ellipse" src="images/ellipse.svg"/>-->
