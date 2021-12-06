@@ -8,7 +8,16 @@ header{
 }
 
 .navbar_header #search_nav_header{
+    display:flex;
     float: right;
+    background-color: #fff;
+    border-radius: 100px;
+    width: 56px;
+    height: 56px;
+}
+
+.navbar_header #search_nav_header #icon{
+    margin: auto;
 }
 
 .wrap{
