@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$(".day").hover(
+	$(".day, .navbar_header").hover(
         function () {
           $(this).addClass("is-active");
         },
