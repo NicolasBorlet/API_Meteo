@@ -79,8 +79,36 @@ header {
   height: 56px;
 }
 
-.navbar_header #search_nav_header #icon {
+.navbar_header.is-active {
+  display: block;
+  width: 612px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+.navbar_header.is-active #search_nav_header {
+  display: flex;
+  float: right;
+  background-color: black;
+  width: 107px;
+  height: 56px;
+  border-radius: 100px;
+}
+
+.navbar_header #search_nav_header p {
+  display: none;
+}
+
+.navbar_header.is-active #search_nav_header p {
+  display: flex;
   margin: auto;
+  color: #fff;
+}
+
+.navbar_header.is-active #search_nav_header #icon {
+  float: left;
+  top: 50%;
 }
 
 .wrap {
@@ -141,7 +169,7 @@ div#main section#main_right {
 div#main section#main_right p {
   color: #fff;
   position: absolute;
-  font-size: 340px;
+  font-size: 300px;
   opacity: 20%;
   font-family: Roboto, sans-serif;
 }
