@@ -17,16 +17,19 @@ header{
 }
 
 .navbar_header.is-active{
-    display:block;
+    display: flex;
     width: 612px;
     height: 80px;
-    background-color:#fff;
+    background-color: #fff;
     border-radius: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 12px;
+    padding-left: 32px;
 }
 
 .navbar_header.is-active #search_nav_header{
     display:flex;
-    float:right;
     background-color: black;
     width: 107px;
     height: 56px;
@@ -43,13 +46,45 @@ header{
     color:#fff;
 }
 
+.navbar_header.is-active div#icon_l section#img-nav{
+    margin: auto;
+}
+
+.navbar_header div#icon_l{
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+.navbar_header.is-active div#icon_l{
+    display:flex;
+    float: left;
+    width:100%
+}
+
+.navbar_header input#search{
+    display: none;
+}
+
+.navbar_header.is-active input#search{
+    display: flex;
+    border-radius: none;
+    width:100%;
+    height:100%;
+}
+
+.navbar_header.is-active div#icon_l #input{
+    padding-left: 32px;
+    width: 100%;
+    height: 100%;
+}
+
 .navbar_header.is-active #search_nav_header #icon{
-    float:left;
-    top: 50%;
+    display: none;
 }
 
 .navbar_header #search_nav_header #icon{
-    
+    margin: auto;
 }
 
 .wrap{
