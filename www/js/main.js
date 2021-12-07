@@ -17,9 +17,9 @@ $(document).ready(function() {
 
         const APIKEY = "9c1b608f4d3ae3c233ae3f9f51972492";
 
-
+        
         //Appel API open weather avec Ville en paramètre
-          let url = 'https://api.openweathermap.org/data/2.5/weather?q=Hautecour&units=metric&appid=9c1b608f4d3ae3c233ae3f9f51972492';
+          let url = "https://api.openweathermap.org/data/2.5/weather?q=Hautecour&units=metric&appid={APIKEY}";
 
         fetch(url)
           .then((response) => 
