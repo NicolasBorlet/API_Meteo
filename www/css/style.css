@@ -136,11 +136,15 @@ header {
 .navbar_header.is-active input#search {
   display: flex;
   border-radius: none;
-  width: 100%;
-  height: 100%;
+  font-size: 24px;
+  opacity: 20%;
+  width: 90%;
+  height: 90%;
+  margin: auto;
 }
 
 .navbar_header.is-active div#icon_l #input {
+  display: flex;
   padding-left: 32px;
   width: 100%;
   height: 100%;
