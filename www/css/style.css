@@ -138,6 +138,7 @@ header {
   border-radius: none;
   font-size: 24px;
   opacity: 20%;
+  outline: none;
   width: 90%;
   height: 90%;
   margin: auto;
