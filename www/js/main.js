@@ -15,11 +15,13 @@ $(document).ready(function() {
         });
 
 
-        //Appel API open weather avec Ville en paramètre
+        //Appel API open weather
         let apiCall = function (){
+
           let base_url="https://api.openweathermap.org/data/2.5/weather?"
           let city = document.querySelector('#search').value;
           const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
+
           let url = base_url + "q=" + city + "&appid=" + APIKEY + "&units=metric" ;
           
           fetch(url)
@@ -46,4 +48,15 @@ $(document).ready(function() {
 
         //Appel au chargement de la page
         apicall=('Chambéry');
+
 });
+
+//Test fonction pour changer l'image d'arrière plan
+/*function image() {
+
+  let temp = document.ById('temp')
+
+  if (temp > 0){
+    document.querySelector('#conditions').innerHTML = <img id="conditions" src="images/partly_cloudy.svg"/>;
+  };
+}*/
