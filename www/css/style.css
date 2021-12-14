@@ -67,6 +67,11 @@ input {
   border: none;
 }
 
+body {
+  position: relative;
+  height: 100%;
+}
+
 header {
   padding-top: 32px;
   padding-right: 32px;
@@ -135,7 +140,6 @@ header {
 
 .navbar_header.is-active input#search {
   display: flex;
-  border-radius: none;
   font-size: 24px;
   opacity: 20%;
   outline: none;
@@ -234,11 +238,9 @@ div#main section#main_right div#icone {
 
 li.day {
   display: inline;
-  padding: 0px, 16px;
 }
 
 li.day button {
-  background-color: none;
   color: black;
 }
 
@@ -256,7 +258,6 @@ div#days ul#timeline li {
 }
 
 div#days ul#timeline li.day button {
-  background-color: none;
   border-radius: 100px;
   color: #fff;
   width: 122px;
@@ -271,6 +272,13 @@ div#days ul#timeline li.day.is-active button {
 div#days ul#timeline li.day button.is-select {
   background-color: #fff;
   color: black;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 body {
