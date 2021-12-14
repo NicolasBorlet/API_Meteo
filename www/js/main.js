@@ -18,7 +18,7 @@ $(document).ready(function() {
         //Appel API open weather
         let apiCall = function (){
 
-          let base_url="https://api.openweathermap.org/data/2.5/weather?"
+          let base_url = "https://api.openweathermap.org/data/2.5/weather?"
           let city = document.querySelector('#search').value;
           const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
 
@@ -28,26 +28,28 @@ $(document).ready(function() {
             .then((response) => 
               response.json().then((data) => {
                 console.log(data);
-                document.querySelector('#city').innerHTML= data.name;
-                document.querySelector('#temp').innerHTML= data.main.temp +'°';
-                document.querySelector('#wind_speed').innerHTML= data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
-                document.querySelector('#sunrise').innerHTML= data.sys.sunrise; 
-                document.querySelector('#sunset').innerHTML= data.sys.sunset; 
+                document.querySelector('#city').innerHTML = data.name;
+                document.querySelector('#temp').innerHTML = data.main.temp +'°';
+                document.querySelector('#wind_speed').innerHTML = data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
+                document.querySelector('#sunrise').innerHTML = data.sys.sunrise;
+                document.querySelector('#sunset').innerHTML = data.sys.sunset;
               })
           )
           .catch(err => console.log('Erreur : ' + err));
         }
 
         //Ecouteur d'évènement
-        document.querySelector('form').addEventListener('submit', function(e){
+        document.querySelector('form').addEventListener('submit', function(e) {
           e.preventDefault();
           let ville = city;
 
           apiCall(ville);
         })
 
-        //Appel au chargement de la page
-        apicall=('Chambéry');
+        //Appel au chargement de la page qui ne marche pas pour l'instant :(
+        document.addEventListener("DOMContentLoaded", function () {
+            apicall=('Chambéry');
+        });
 
 });
 
