@@ -6,8 +6,7 @@ $(document).ready(function() {
         },
         function () {
           $(this).removeClass("is-active");
-        }
-      );
+        });
 
       $( "button" ).click(
         function () {
@@ -48,7 +47,8 @@ $(document).ready(function() {
 
         //Appel au chargement de la page qui ne marche pas pour l'instant :(
         document.addEventListener("DOMContentLoaded", function () {
-            apicall=('Chambéry');
+            alert('test');
+            apicall('Chambéry');
         });
 
 });
