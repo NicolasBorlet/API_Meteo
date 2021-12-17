@@ -194,10 +194,11 @@ section#first_list .list section.information_list {
 
 #main {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 section#first_list {
-  margin-top: 32px;
   width: 400px;
 }
 
@@ -217,7 +218,6 @@ div#main section#first_list div.list section.title_list p {
 div#main section#main_right {
   float: right;
   display: flex;
-  margin-left: 27px;
 }
 
 div#main section#main_right p {
@@ -251,14 +251,7 @@ li.day button {
 div#days {
   padding-top: 130px;
   display: flex;
-}
-
-div#days ul#timeline {
-  margin: auto;
-}
-
-div#days ul#timeline li {
-  padding-right: 16px;
+  justify-content: space-evenly;
 }
 
 div#days ul#timeline li.day button {
@@ -278,15 +271,14 @@ div#days ul#timeline li.day button.is-select {
   color: black;
 }
 
-footer {
+section#main_right div#icone img#ellipse {
   position: absolute;
+}
+
+footer {
   bottom: 0;
   left: 0;
   right: 0;
-}
-
-section#main_right div#icone img#ellipse {
-  position: absolute;
 }
 
 body {
