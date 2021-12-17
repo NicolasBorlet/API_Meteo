@@ -6,12 +6,12 @@ $(document).ready(function() {
         },
         function () {
           $(this).removeClass("is-active");
-        });
+    });
 
       $( "button" ).click(
         function () {
             $(this).addClass("is-select");
-        });
+    });
 
 
         //Appel API open weather
@@ -22,6 +22,8 @@ $(document).ready(function() {
           const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
 
           let url = base_url + "q=" + city + "&appid=" + APIKEY + "&units=metric" ;
+
+          //let temp = document.ById('temp')
           
           fetch(url)
             .then((response) => 
@@ -32,6 +34,9 @@ $(document).ready(function() {
                 document.querySelector('#wind_speed').innerHTML = data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
                 document.querySelector('#sunrise').innerHTML = data.sys.sunrise;
                 document.querySelector('#sunset').innerHTML = data.sys.sunset;
+                /*if (temp > 0){
+                    document.querySelector('#conditions').innerHTML = <img id="conditions" src="images/partly_cloudy.svg"/>;
+                }*/
               })
           )
           .catch(err => console.log('Erreur : ' + err));
@@ -40,9 +45,8 @@ $(document).ready(function() {
         //Ecouteur d'évènement
         document.querySelector('form').addEventListener('submit', function(e) {
           e.preventDefault();
-          let ville = city;
 
-          apiCall(ville);
+          apiCall(city);
         })
 
         //Appel au chargement de la page qui ne marche pas pour l'instant :(
@@ -52,13 +56,3 @@ $(document).ready(function() {
         });
 
 });
-
-//Test fonction pour changer l'image d'arrière plan
-/*function image() {
-
-  let temp = document.ById('temp')
-
-  if (temp > 0){
-    document.querySelector('#conditions').innerHTML = <img id="conditions" src="images/partly_cloudy.svg"/>;
-  };
-}*/
