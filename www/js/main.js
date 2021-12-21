@@ -21,7 +21,7 @@ $(document).ready(function() {
           let city = document.querySelector('#search').value;
           const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
 
-          let url = base_url + "q=" + city + "&appid=" + APIKEY + "&units=metric" ;
+          let url = base_url + "q=" + city + ",fr&appid=" + APIKEY + "&units=metric" ;
 
           //let temp = document.ById('temp')
           
@@ -34,6 +34,7 @@ $(document).ready(function() {
                 document.querySelector('#wind_speed').innerHTML = data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
                 document.querySelector('#sunrise').innerHTML = data.sys.sunrise;
                 document.querySelector('#sunset').innerHTML = data.sys.sunset;
+                document.querySelector('#humidity').innerHTML = data.main.humidity;
                 /*if (temp > 0){
                     document.querySelector('#conditions').innerHTML = <img id="conditions" src="images/partly_cloudy.svg"/>;
                 }*/
@@ -49,10 +50,8 @@ $(document).ready(function() {
           apiCall(city);
         })
 
-        //Appel au chargement de la page qui ne marche pas pour l'instant :(
-        document.addEventListener("DOMContentLoaded", function () {
-            alert('test');
-            apicall('Chambéry');
-        });
-
+        //Fonctionne mais n'affiche pas la ville: Affiche soit undefined ou une ville en France si j'ajoute ",fr" à l'url d'appel de l'API
+        $(document).ready(function () {
+            apiCall('Paris');
+        })
 });
