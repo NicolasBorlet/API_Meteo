@@ -195,11 +195,12 @@ section#first_list .list section.information_list {
 #main {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 section#first_list {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 div#main section#first_list div.list section.information_list p {
