@@ -17,18 +17,19 @@ $(document).ready(function() {
         //Appel API open weather
         let apiCall = function (){
 
-          let base_url = "https://api.openweathermap.org/data/2.5/weather?"
+          let base_url = "http://localhost/API_Meteo/www/weather.php"
           let city = document.querySelector('#search').value;
           const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
 
-          let url = base_url + "q=" + city + ",fr&appid=" + APIKEY + "&units=metric" ;
+          //let url = base_url + "q=" + city + "&appid=" + APIKEY + "&units=metric" ;
 
           //let temp = document.ById('temp')
           
-          fetch(url)
+          fetch(base_url)
             .then((response) => 
               response.json().then((data) => {
                 console.log(data);
+                
                 document.querySelector('#city').innerHTML = data.name;
                 document.querySelector('#temp').innerHTML = data.main.temp +'°';
                 document.querySelector('#wind_speed').innerHTML = data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
