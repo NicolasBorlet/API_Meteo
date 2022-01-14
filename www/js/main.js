@@ -11,48 +11,28 @@ $(document).ready(function() {
       $( "button" ).click(
         function () {
             $(this).addClass("is-select");
-    });
+          });
 
-
-        //Appel API open weather
-        let apiCall = function (){
-
-          let base_url = "http://localhost/API_Meteo/www/weather.php"
-          let city = document.querySelector('#search').value;
-          const APIKEY = '9c1b608f4d3ae3c233ae3f9f51972492';
-
-          //let url = base_url + "q=" + city + "&appid=" + APIKEY + "&units=metric" ;
-
-          //let temp = document.ById('temp')
+          const settings = {
+            "async": true,
+            "url": "http://localhost/API-Weather/www/weather.php",
+            "method": "GET",
+          };
           
-          fetch(base_url)
-            .then((response) => 
-              response.json().then((data) => {
-                console.log(data);
-                
-                document.querySelector('#city').innerHTML = data.name;
-                document.querySelector('#temp').innerHTML = data.main.temp +'°';
-                document.querySelector('#wind_speed').innerHTML = data.wind.speed + ' km/h'; //+ " <i class='fas fa-wind'></i>";
-                document.querySelector('#sunrise').innerHTML = data.sys.sunrise;
-                document.querySelector('#sunset').innerHTML = data.sys.sunset;
-                document.querySelector('#humidity').innerHTML = data.main.humidity;
-                /*if (temp > 0){
-                    document.querySelector('#conditions').innerHTML = <img id="conditions" src="images/partly_cloudy.svg"/>;
-                }*/
-              })
-          )
-          .catch(err => console.log('Erreur : ' + err));
-        }
-
-        //Ecouteur d'évènement
-        document.querySelector('form').addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          apiCall(city);
-        })
-
-        //Fonctionne mais n'affiche pas la ville: Affiche soit undefined ou une ville en France si j'ajoute ",fr" à l'url d'appel de l'API
-        $(document).ready(function () {
-            apiCall('Paris');
-        })
+          $.ajax(settings).done(function (response) {
+            response= JSON.parse(response);
+            console.log(response.data[0].sunrise);
+            console.log(response.data[0].wind_spd);
+            console.log(response.data[0].city_name);
+            console.log(response.data[0].precip);
+            console.log(response.data[0].sunset);
+          
+            $('#sunrise').text(response.data[0].sunrise);
+            $('#wind_speed').text(response.data[0].wind_spd*3.6+" km/h");
+            $('#city').text(response.data[0].city_name);
+            $('#sunset').text(response.data[0].sunset);
+            $('#humidity').text(response.data[0].precip);
+            $('#temp').text(response.data[0].temp+"°");
+          
+          });
 });
