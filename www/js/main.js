@@ -19,6 +19,7 @@ $(document).ready(function() {
 
           let base_url = "http://localhost/API_Meteo/www/weather.php"
           let city = document.querySelector('#search').value;
+          let cloudy = "<img src='C:/xampp/htdocs/API_Meteo/www/images/cloudy.svg'>"
 
           
           fetch(base_url)
@@ -33,17 +34,25 @@ $(document).ready(function() {
                 document.querySelector('#sunset').innerHTML = data.data[0].sunset_ts;
                 document.querySelector('#humidity').innerHTML = data.data[0].precip;
 
-                //Déclaration d'une fonction pour modifié le dégradé
+
+                //Switch pour modifier l'icone montrant la météo
+                switch (data.data[0].weather.code) 
+                {
+                  case "804" :
+                    document.querySelector('#conditions').innerHTML ='cloudy' ;
+                }
+
+                //Déclaration d'une fonction pour modifier le dégradé
                 $(function() {
                   var hot =["linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)"];
                   var middle =["linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)"];
                   var cold = ["linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)"];
                   var temp = document.querySelector('#temp');
 
-                  if (temp > 25) {
+                  if (temp > [25-50]) {
                     document.body.style.background = hot;
                   }
-                  if (temp < 10){
+                  if (temp < [0-10]){
                     document.body.style.background = cold;
                   }
                   if (temp [10-25]){
