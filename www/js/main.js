@@ -43,4 +43,9 @@ $(document).ready(function() {
 
           apiCall(city);
         })
+
+        //Fonctionne mais n'affiche pas la ville: Affiche soit undefined ou une ville en France si j'ajoute ",fr" à l'url d'appel de l'API
+        $(document).ready(function () {
+            apiCall('');
+        })
 });
