@@ -35,13 +35,13 @@ $(document).ready(function() {
 
                 //Déclaration d'une fonction pour modifié le dégradé
                 $(function() {
-                  var chaud =["linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)"];
+                  var hot =["linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)"];
                   var middle =["linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)"];
                   var cold = ["linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)"];
-                  var temperature = document.querySelector('#temp');
+                  var temp = document.querySelector('#temp');
 
                   if (temp > 25) {
-                    document.body.style.background = chaud;
+                    document.body.style.background = hot;
                   }
                   if (temp < 10){
                     document.body.style.background = cold;
