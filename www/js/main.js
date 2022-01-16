@@ -32,6 +32,24 @@ $(document).ready(function() {
                 document.querySelector('#sunrise').innerHTML = data.data[0].sunrise_ts;
                 document.querySelector('#sunset').innerHTML = data.data[0].sunset_ts;
                 document.querySelector('#humidity').innerHTML = data.data[0].precip;
+
+                //Déclaration d'une fonction pour modifié le dégradé
+                $(function() {
+                  var chaud =["linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)"];
+                  var middle =["linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)"];
+                  var cold = ["linear-gradient(72.85deg, #1DA9C 20%, #F8AD48 100%)"];
+                  var temperature = document.querySelector('#temp');
+
+                  if (temp > 25) {
+                    document.body.style.background = chaud;
+                  }
+                  if (temp < 10){
+                    document.body.style.background = cold;
+                  }
+                  if (temp [10-25]){
+                    document.body.style.background = middle;
+                  }
+                })
               })
           )
           .catch(err => console.log('Erreur : ' + err));
