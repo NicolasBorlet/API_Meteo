@@ -56,6 +56,7 @@ $(document).ready(function() {
 
 
                   //Déclaration boucle if pour modifier l'icone, j'ai essayé de le faire avec une boucle switch mais pas réussi
+                  //Je n'ai pas mis tous les codes j'en ai englobé le maximum
                   if (data.data[0].weather.code === 800){
                       document.querySelector('#conditions').src="images/slight_touch_happyday.svg";
                   }else if ((data.data[0].weather.code > 800) && (data.data[0].weather.code <= 803))
