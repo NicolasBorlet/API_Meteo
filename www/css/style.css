@@ -69,7 +69,7 @@ input {
 
 body {
   position: relative;
-  height: 100%;
+  height: 100vh;
 }
 
 header {
@@ -283,8 +283,8 @@ footer {
 }
 
 body {
-  background: linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%);
   font-family: roboto, sans-serif;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=style.css.map */
