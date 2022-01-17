@@ -1,18 +1,20 @@
 $(document).ready(function() {
 
+    //Fonction hover qui permet de détecter et d'ajouter une class "is-active" aux éléments survolés"
 	$(".day, .navbar_header").hover(
         function () {
           $(this).addClass("is-active");
         },
         function () {
           $(this).removeClass("is-active");
-    });
+        });
 
+    //Fonction qui permet d'ajouter la class "is-select" aux éléments cliqués
       $( "button" ).click(
         function () {
             $(".is-select").removeClass("is-select");
             $(this).addClass("is-select");
-    });
+        });
 
 
         //Appel API
@@ -21,11 +23,12 @@ $(document).ready(function() {
           let base_url = "http://localhost/API_Meteo/www/weather.php";
           let city = document.querySelector('#search').value;
 
-          
+          //Appel de l'url et récupération des donnéees
           fetch(base_url)
             .then((response) => 
               response.json().then((data) => {
                 console.log(data);
+                //Appel des données qui nous intéresse et mis en place dans le HTML
                 //Je suis obligé de mettre 2x fois data dans mes appels, je pense que la méthode que j'utilise n'est clairemenent pas la plus optimisée
                 document.querySelector('#city').innerHTML = data.city_name;
                 document.querySelector('#temp').innerHTML = data.data[0].temp +'°';
@@ -35,13 +38,6 @@ $(document).ready(function() {
                 document.querySelector('#humidity').innerHTML = data.data[0].precip;
 
 
-                //Tentative de céer une fonction récupérant la date et l'affichant de manière convenue sur la page
-                  // à l'aide de la méthode getDate()
-                function Day(){
-                const date = new Date(data.data[0].valid_date);
-                const Today = date.getDate()
-                document.querySelector('#date').innerHTML = "Today "+ Today;
-                }
 
                 //Switch pour modifier l'icone montrant la météo
                 switch (data.data[0].weather)
@@ -58,6 +54,59 @@ $(document).ready(function() {
                   } else if (25 < data.data[0].temp) {
                       $('body').css('background', 'linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)');
                   }
+
+
+                  //Création d'une boucle "Switch" pour reconnaitre le mois de l'année
+                  function getMonthString(num)
+                  {
+
+                      var month;    //Creation d'une variable local
+                      switch(num)
+                      {
+                          case 0:
+                              month="January";
+                              break;
+                          case 1:
+                              month="February";
+                              break;
+                          case 2:
+                              month="March";
+                              break;
+                          case 3:
+                              month="April";
+                              break;
+                          case 4:
+                              month="May";
+                              break;
+                          case 5:
+                              month="June";
+                              break;
+                          case 6:
+                              month="July";
+                              break;
+                          case 7:
+                              month="August";
+                              break;
+                          case 8:
+                              month="September";
+                              break;
+                          case 9:
+                              month="October";
+                              break;
+                          case 10:
+                              month="November";
+                              break;
+                          case 11:
+                              month="December";
+                              break;
+                      }
+                      return month;
+                  }
+                  theDate = new Date();
+                  document.querySelector('#date').innerHTML = "Today " + getMonthString(theDate.getMonth());
+
+
+
               })
           )
           .catch(err => console.log('Erreur : ' + err));
