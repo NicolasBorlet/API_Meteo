@@ -10,6 +10,7 @@ $(document).ready(function() {
 
       $( "button" ).click(
         function () {
+            $(".is-select").removeClass("is-select");
             $(this).addClass("is-select");
     });
 
@@ -17,9 +18,8 @@ $(document).ready(function() {
         //Appel API
         let apiCall = function (){
 
-          let base_url = "http://localhost/API_Meteo/www/weather.php"
+          let base_url = "http://localhost/API_Meteo/www/weather.php";
           let city = document.querySelector('#search').value;
-          let cloudy = "<img src='C:/xampp/htdocs/API_Meteo/www/images/cloudy.svg'>"
 
           
           fetch(base_url)
@@ -35,30 +35,29 @@ $(document).ready(function() {
                 document.querySelector('#humidity').innerHTML = data.data[0].precip;
 
 
+                //Tentative de céer une fonction récupérant la date et l'affichant de manière convenue sur la page
+                  // à l'aide de la méthode getDate()
+                function Day(){
+                const date = new Date(data.data[0].valid_date);
+                const Today = date.getDate()
+                document.querySelector('#date').innerHTML = "Today "+ Today;
+                }
+
                 //Switch pour modifier l'icone montrant la météo
-                switch (data.data[0].weather.code) 
+                switch (data.data[0].weather)
                 {
                   case "804" :
                     document.querySelector('#conditions').innerHTML ='cloudy' ;
                 }
 
-                //Déclaration d'une fonction pour modifier le dégradé
-                $(function() {
-                  var hot =["linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)"];
-                  var middle =["linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)"];
-                  var cold = ["linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)"];
-                  var temp = document.querySelector('#temp');
-
-                  if (temp > [25-50]) {
-                    document.body.style.background = hot;
+                //Déclaration D'une boucle "if" pour modifier le dégradé
+                  if (data.data[0].temp < 10) {
+                    $('body').css('background', 'linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)');
+                  } else if ((data.data[0].temp > 10) && (data.data[0].temp < 25)) {
+                      $('body').css('background', 'linear-gradient(72.85deg, #71376E 0%, #F8AD48 100%)');
+                  } else if (25 < data.data[0].temp) {
+                      $('body').css('background', 'linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)');
                   }
-                  if (temp < [0-10]){
-                    document.body.style.background = cold;
-                  }
-                  if (temp [10-25]){
-                    document.body.style.background = middle;
-                  }
-                })
               })
           )
           .catch(err => console.log('Erreur : ' + err));
