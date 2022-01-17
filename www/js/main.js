@@ -45,14 +45,6 @@ $(document).ready(function() {
                 document.querySelector('#humidity').innerHTML = data.data[0].precip;
 
 
-
-                //Switch pour modifier l'icone montrant la météo
-                switch (data.data[0].weather)
-                {
-                  case "804" :
-                    document.querySelector('#conditions').innerHTML ='cloudy' ;
-                }
-
                 //Déclaration D'une boucle "if" pour modifier le dégradé
                   if (data.data[0].temp < 10) {
                     $('body').css('background', 'linear-gradient(72.85deg, #1DA9C2 0%, #F8AD48 100%)');
@@ -61,6 +53,37 @@ $(document).ready(function() {
                   } else if (25 < data.data[0].temp) {
                       $('body').css('background', 'linear-gradient(72.85deg, #D9547B 0%, #F8AD48 100%)');
                   }
+
+
+                  //Déclaration boucle if pour modifier l'icone, j'ai essayé de le faire avec une boucle switch mais pas réussi
+                  if (data.data[0].weather.code === 800){
+                      document.querySelector('#conditions').src="images/slight_touch_happyday.svg";
+                  }else if ((data.data[0].weather.code > 800) && (data.data[0].weather.code <= 803))
+                  {
+                      document.querySelector('#conditions').src = "images/partly_cloudy.svg";
+                  }else if ((data.data[0].weather.code >= 803) && (data.data[0].weather.code <= 804))
+                  {
+                      document.querySelector('#conditions').src = "images/cloudy.svg";
+                  }else if (data.data[0].weather.code >= 900)
+                  {
+                    document.querySelector('#conditions').src = "images/rainy.svg";
+                  }else if ((data.data[0].weather.code >= 200) && (data.data[0].weather.code <= 202))
+                  {
+                      document.querySelector('#conditions').src = "images/partly_day_storm.svg";
+                  }else if ((data.data[0].weather.code >= 230) && (data.data[0].weather.code <= 233))
+                  {
+                      document.querySelector('#conditions').src = "images/thnderstorm.svg";
+                  }else if ((data.data[0].weather.code >= 300) && (data.data[0].weather.code <= 302))
+                  {
+                      document.querySelector('#conditions').src = "images/snowy.svg";
+                  }else if ((data.data[0].weather.code >= 500) && (data.data[0].weather.code <= 522))
+                  {
+                      document.querySelector('#conditions').src = "images/rainy.svg";
+                  }else if ((data.data[0].weather.code >= 600) && (data.data[0].weather.code <= 610))
+                  {
+                      document.querySelector('#conditions').src = "images/snowy.svg";
+                  }
+
 
 
                   //Création d'une boucle "Switch" pour reconnaitre le mois de l'année
