@@ -17,7 +17,7 @@ $(document).ready(function() {
         });
 
         //Création d'une fonction qui permet de ne pas avoir de chiffre à virgule
-        function financial(x) {
+        function decimal(x) {
             return Number.parseFloat(x).toFixed(0);
         }
 
@@ -25,10 +25,12 @@ $(document).ready(function() {
         //Appel API
         let apiCall = function (){
 
+
           let base_url = "http://localhost/API_Meteo/www/weather.php";
           let city = document.querySelector('#search').value;
 
-          //Appel de l'url et récupération des donnéees
+
+          //Appel de l'url et récupération des données
           fetch(base_url)
             .then((response) => 
               response.json().then((data) => {
@@ -36,7 +38,7 @@ $(document).ready(function() {
                 //Appel des données qui nous intéresse et mis en place dans le HTML
                 //Je suis obligé de mettre 2x fois data dans mes appels, je pense que la méthode que j'utilise n'est clairemenent pas la plus optimisée
                 document.querySelector('#city').innerHTML = data.city_name;
-                document.querySelector('#temp').innerHTML = financial(data.data[0].temp) +'°';
+                document.querySelector('#temp').innerHTML = decimal(data.data[0].temp) +'°';
                 document.querySelector('#wind_speed').innerHTML = data.data[0].wind_spd + ' km/h';
                 document.querySelector('#sunrise').innerHTML = data.data[0].sunrise_ts;
                 document.querySelector('#sunset').innerHTML = data.data[0].sunset_ts;
