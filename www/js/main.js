@@ -57,6 +57,7 @@ $(document).ready(function() {
 
 
                   //Création d'une boucle "Switch" pour reconnaitre le mois de l'année
+                  // J'aurais pu déclarer une variable et associer chaque mois à un nombre mais je trouvais ça plus contraignant
                   function getMonthString(num)
                   {
 
@@ -103,7 +104,14 @@ $(document).ready(function() {
                       return month;
                   }
                   theDate = new Date();
-                  document.querySelector('#date').innerHTML = "Today " + getMonthString(theDate.getMonth());
+
+
+                  //Création d'une variable pour récupérer le jour
+                  dateVar = new Date();
+
+
+                  //Appel des 2 fonctions pour afficher le jour et le mois
+                  document.querySelector('#date').innerHTML = "Today " + dateVar.getDate() + " " + getMonthString(theDate.getMonth());
 
 
 
